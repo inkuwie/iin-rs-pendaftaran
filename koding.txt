@@ -1,0 +1,39 @@
+echo $hari[ date('N') ]; echo ", "; echo
+
+
+$hari = array ( 1 =>    'Senin',
+                        'Selasa',
+                        'Rabu',
+                        'Kamis',
+                        'Jumat',
+                        'Sabtu',
+                        'Minggu'
+                      );
+echo $hari[ date('N') ]; echo ", "; echo $tgl_daftar;
+
+
+table-borderless
+
+koding untuk menampilkan data dari 3 tabel di cdm sql
+select pasien.tgl_daftar,pasien.kode_pendaftaran,pasien.nama,poliklinik.nama_poli,dokter.nama_dokter,jam.jam from pasien
+    -> join poliklinik on pasien.id_poli=poliklinik.id_poli
+    -> join dokter on pasien.id_dokter=dokter.id_dokter
+    -> join jam on pasien.id_jam=jam.id_jam;
+
+untuk semua tabel bentuk tidak normal
+select pasien.kode_pendaftaran,pasien.tgl_daftar,poliklinik.nama_poli,dokter.nama_dokter,jam.jam,pasien.jenis_pembayaran,pasien.no_rm,pasien.nama,pasien.jk,pasien.tlahir,pasien.nohp,pasien.ttl,pasien.pekerjaan,pasien.alamat,pasien.wnama,pasien.wjk,pasien.walamat,pasien.wnohp,pasien.status from pasien
+    -> join poliklinik on pasien.id_poli=poliklinik.id_poli
+    -> join dokter on pasien.id_dokter=dokter.id_dokter
+    -> join jam on pasien.id_jam=jam.id_jam;
+
+select pasien.kode_pendaftaran,pasien.tgl_daftar,poliklinik.nama_poli,dokter.nama_dokter,jam.jam,pasien.jenis_pembayaran,pasien.no_rm,pasien.nama,pasien.jk,pasien.tlahir,pasien.nohp,pasien.ttl,pasien.pekerjaan,pasien.alamat,pasien.wnama,pasien.wjk,pasien.walamat,pasien.wnohp from pasien join poliklinik on pasien.id_poli=poliklinik.id_poli join dokter on pasien.id_dokter=dokter.id_dokter join jam on pasien.id_jam=jam.id_jam
+
+          foreach ($pasien as $col) {
+            $html .= '
+                  <td>'. $col["kode_pendaftaran"] .'</td>';
+                  <tr>'. $col["tgl_daftar"] .'</tr>
+                  <td>'. $col["nama_poli"] .'</td>
+                  <td>'. $col["nama_dokter"] .'</td>
+                  <td>'. $col["jam"] .'</td>
+            </td>';
+          }
